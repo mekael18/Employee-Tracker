@@ -94,6 +94,13 @@ class DB {
         );
     };
 
-};
+    // get department budget
+    getDepartmentBudget(departmentId) {
+        return this.connection.query(
+            "SELECT department.name AS department, SUM(role.salary) AS utilized_budget FROM employee LEFT JOIN role ON employee.role_id = role.id LEFT JOIN department ON role.department_id = department.id WHERE department.id = ? GROUP BY department.id, department.name;",
+            departmentId
+        );
+    };
+}
 
 module.exports = new DB(connection);

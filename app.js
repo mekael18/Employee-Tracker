@@ -1,11 +1,14 @@
-const inquirer = require('inquirer');
-const db = require('./db/index.js');
-
-require('console.table');
+import inquirer from 'inquirer';
+import logo from 'asciiart-logo';
+import { connection } from './db/connection.js';
+import 'console.table';
 
 function init() {
-    mainMenu();
+  const logoText = logo({ name: "Employee Manager" }).render();
+  console.log(logoText);
+  mainMenu();
 }
+
 
 const mainMenu = () => {
     inquirer.prompt([

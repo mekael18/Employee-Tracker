@@ -86,3 +86,11 @@ FROM role;
 SELECT *
 FROM department;
 
+CREATE TABLE customers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    phone VARCHAR(30) NOT NULL
+);
+
